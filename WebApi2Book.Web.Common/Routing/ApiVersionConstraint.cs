@@ -19,7 +19,7 @@ namespace WebApi2Book.Web.Common.Routing
         {
             
             object value;
-            if (values.TryGetValue("parameterName", out value) && value != null)
+            if (values.TryGetValue(parameterName, out value) && value != null)
             {
                 return (AllowedVersion.Equals(value.ToString().ToLowerInvariant()));
             }
