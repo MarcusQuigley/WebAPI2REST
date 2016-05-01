@@ -10,6 +10,8 @@ namespace WebApi2Book.Web.Api.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using WebApi2Book.Web.Common;
+    using System.Web.Http;
 
     public static class NinjectWebCommon 
     {
@@ -22,7 +24,17 @@ namespace WebApi2Book.Web.Api.App_Start
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
-            bootstrapper.Initialize(CreateKernel);
+            
+            //  bootstrapper.Initialize(CreateKernel);
+            IKernel container=null;
+            bootstrapper.Initialize(() =>
+                {
+                    container = CreateKernel();
+                    return container;
+                });
+
+            var resolver = new NinjectDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = resolver;
         }
         
         /// <summary>
@@ -61,6 +73,8 @@ namespace WebApi2Book.Web.Api.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            NinjectConfigurator configurator = new NinjectConfigurator();
+            configurator.Configure(kernel);
         }        
     }
 }
