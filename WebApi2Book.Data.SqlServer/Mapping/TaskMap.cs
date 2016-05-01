@@ -11,9 +11,9 @@ namespace WebApi2Book.Data.SqlServer.Mapping
             this.Id(x => x.TaskId);
             this.Map(x=>x.Subject).Not.Nullable();
              this.Map(x=>x.StartDate).Nullable();
-             this.Map(x=>x.DueDate).Not.Nullable();
+             this.Map(x=>x.DueDate).Nullable();
              this.Map(x=>x.CompletedDate).Nullable();
-             this.Map(x=>x.CreatedDate).Nullable();
+             this.Map(x=>x.CreatedDate).Not.Nullable();
 
              this.References(x => x.Status, "StatusId"); //StatusId is a db column
             this.References(x=>x.CreatedBy,"CreatedUserId");

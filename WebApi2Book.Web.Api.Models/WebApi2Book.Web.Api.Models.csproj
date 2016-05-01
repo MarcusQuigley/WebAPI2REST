@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MaintenanceProcessing\IAddTaskMaintenanceProcessor.cs" />
     <Compile Include="NewTask.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Task.cs" />
