@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApi2Book.Data.DataEntities
 {
-    public class Task
+    public class Task : IVersionedEntity
     {
         private readonly IList<User> _users = new List<User>();
         public virtual long TaskId { get; set; }

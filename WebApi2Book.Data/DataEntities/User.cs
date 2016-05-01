@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApi2Book.Data.DataEntities
 {
-    public class User
+    public class User : IVersionedEntity
     {
         public virtual long UserId { get; set; }
         public virtual string Firstname { get; set; }

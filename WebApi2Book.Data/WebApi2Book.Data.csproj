@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataEntities\IVersionedEntity.cs" />
     <Compile Include="DataEntities\User.cs" />
     <Compile Include="DataEntities\Task.cs" />
     <Compile Include="DataEntities\Status.cs" />
