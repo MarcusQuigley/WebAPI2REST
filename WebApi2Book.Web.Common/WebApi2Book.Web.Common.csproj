@@ -79,6 +79,7 @@
     <Compile Include="Routing\ApiVersionConstraint.cs" />
     <Compile Include="Routing\ApiVersionRoutePrefixAttribute.cs" />
     <Compile Include="Routing\NamespaceHttpControllerSelector.cs" />
+    <Compile Include="SimpleTraceWriter.cs" />
     <Compile Include="UnitOfWorkActionFilterAttribute.cs" />
     <Compile Include="WebContainerManager.cs" />
   </ItemGroup>
